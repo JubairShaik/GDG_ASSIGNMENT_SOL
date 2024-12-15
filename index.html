@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List App</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="body">
+    <nav class="nav">
+      <div class="nav-container">
+        <img
+          src="./assets/images/gdg-logo.png"
+          alt="gdg-logo"
+          class="nav-logo"
+        />
+        <h2 class="nav-title">GDG To-Do List App</h2>
+      </div>
+    </nav>
+    <main class="main">
+      <div class="main-container">
+        <!-- Modal Overlay -->
+        <div id="modalOverlay" class="modal-overlay hidden">
+          <div class="modal-content">
+            <h1 class="modal-title" id="modalTitle">Add Task</h1>
+            <form action="" class="modal-form">
+              <div class="modal-input-group">
+                <input
+                  id="addTaskName"
+                  type="text"
+                  class="modal-input"
+                  placeholder="Task"
+                />
+                <input
+                  id="addTaskDate"
+                  type="date"
+                  class="modal-input"
+                  placeholder="Due Date"
+                />
+                <select
+                  name="addTaskPriority"
+                  id="addTaskPriority"
+                  class="modal-select"
+                >
+                  <option value="" disabled selected>Select Priority</option>
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+              <div class="modal-buttons">
+                <button id="closeModal" type="button" class="modal-cancel-btn">
+                  <i class="fas fa-times"></i> Cancel
+                </button>
+                <button id="addTaskBtn" type="submit" class="modal-save-btn">
+                  <i class="fas fa-save"></i> Save Task
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Upcoming -->
+        <section id="upcomingSection">
+          <div class="section-header">
+            <h1 class="section-title">Upcoming</h1>
+            <div class="todo-actions">
+              <select name="filter" id="sortFilter" class="filterSelect">
+                <option value="" disabled selected>Sort By</option>
+                <option value="all">All</option>
+                <option value="date">Date</option>
+                <option value="priority">Priority</option>
+              </select>
+
+              <button id="openModal" class="add-task-btn">
+                <i class="color-white fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div id="upcomingSectionContainer" class="task-container">
+            <!-- Example Task Card -->
+            <div class="task-card red-border">
+              <div class="task-details">
+                <div class="task-header">
+                  <i class="fas fa-clipboard"></i>
+                  <h2 class="task-title">Task 1</h2>
+                </div>
+                <p class="task-date">12/12/2024</p>
+              </div>
+              <div class="task-actions">
+                <button class="color-white edit-btn">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="color-white delete-btn">
+                  <i class="fas fa-trash"></i>
+                </button>
+                <input type="checkbox" checked class="task-checkbox" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Completed -->
+        <section>
+          <div class="section-header">
+            <h1 class="section-title">Completed</h1>
+          </div>
+          <div>
+            <div id="completedSectionContainer" class="task-container">
+              <!-- Example Completed Task Card -->
+              <div class="task-card completed grey-border">
+                <div class="task-details">
+                  <h2 class="task-title line-through">Task 1</h2>
+                  <p class="task-date line-through">12/12/2024</p>
+                </div>
+                <div class="task-actions">
+                  <button class="color-white delete-btn">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <input type="checkbox" checked class="task-checkbox" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

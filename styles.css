@@ -1,0 +1,450 @@
+/* Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: ui-sans-serif, Helvetica, sans-serif;
+}
+
+.red-border {
+    border-left: 20px solid #ea4335;
+}
+
+.color-white {
+    color: white;
+    cursor: pointer;
+}
+
+.body {
+    background: linear-gradient(135deg, #121212, #181818);
+    color: white;
+    height: max-content;
+    width: 100%;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+/* Navigation */
+.nav {
+    background: linear-gradient(135deg, #1e1e1e, #333333);
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 72px;
+    padding: 12px;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.nav-logo {
+    height: 5rem;
+    width: 5rem;
+}
+.nav-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.75rem
+}
+
+/* Main */
+main {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+.main-container {
+    width: 100%;
+    padding: 2rem;
+    padding-top: 100px;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background-color: rgba(18, 18, 18, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E1E1E;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 30rem;
+}
+.modal-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 90%;
+
+}
+.modal-input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.modal-input-group input:placeholder {
+    color: white;
+
+}
+
+.modal-input-group input {
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0px;
+    color: white;
+}
+
+.modal-input-group input:focus {
+    outline: none;
+}
+
+.modal-input, .modal-select {
+    background-color: #1E1E1E;
+    font-size: 1.5rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    color: white;
+}
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+
+}
+.modal-cancel-btn {
+    font-size: 1rem;
+    background-color: #F44336;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.modal-save-btn {
+    font-size: 1rem;
+    background-color: #0F9D58;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Tasks */
+.section-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    height: 45px;
+}
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.todo-actions {
+    position: absolute;
+    right: 0px;
+    gap: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.filterSelect {
+    background-color: #1E1E1E;
+    color: white;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+}
+
+.add-task-btn {
+    font-size: 1.25rem;
+    background-color: #1E1E1E;
+    border-radius: 10%;
+    color: white;
+    border: 0;
+    height: 100%;
+    padding: 10px;
+    align-items: center;
+    cursor: pointer;
+    width: 50px;
+}
+.task-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.task-card {
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: space-between;
+    min-height: 3rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+}
+.task-card.completed .task-title,
+.task-card.completed .task-date {
+/* eplisses text */
+    text-wrap: ellipsis;
+    color: gray;
+}
+.task-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.task-header {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.task-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    min-width: 200px;
+    /* width: 800px; */
+}
+.task-date {
+    color: #464444;
+}
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.25rem;
+    margin-left: 0.5rem;
+    width: 24rem;
+}
+.edit-btn, .delete-btn {
+    font-size: 1.5rem;
+    background-color: #1E1E1E;
+    border: none;
+}
+.task-checkbox {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: #121212;
+    border: 2px solid #1E1E1E;
+    cursor: pointer;
+}
+
+/* for mobile */
+
+@media (max-width: 768px) {
+    .nav {
+        gap: 0.5rem;
+        height: 80px;
+    }
+    .nav-logo {
+        height: 4rem;
+        width: 4rem;
+    }
+    .nav-title {
+        font-size: 1.5rem;
+    }
+    .main {
+        padding-top: 80px;
+        width: 100%;
+    }
+    .main-container {
+        padding: 1rem;
+        
+    }
+    .modal-content {
+        border-radius: 0px;
+        padding: 1rem;
+        height: 100%;
+        padding: 1px;
+        padding-top: 40px;
+        width: 100vw;
+        max-width: 100vw;
+    }
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    .modal-form {
+        gap: 0.5rem;
+    }
+    .modal-input, .modal-select {
+        font-size: 1.25rem;
+        padding: 0.5rem;
+    }
+    .modal-buttons {
+        gap: 0.5rem;
+    }
+    .modal-cancel-btn, .modal-save-btn {
+        font-size: 1rem;
+        padding: 0.25rem 0.5rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .add-task-btn {
+        height: 40px;
+        border-radius: 10px;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+    .task-card {
+        padding: 0.75rem;
+    }
+    .task-details {
+        max-width: 100px;
+    }
+    .task-title {
+        font-size: 1rem;
+        text-wrap: wrap;
+        max-width: fit-content
+    }
+    .task-date {
+        font-size: 1rem;
+    }
+    .task-actions {
+        gap: 0.5rem;
+    }
+    .edit-btn, .delete-btn {
+        font-size: 1.25rem;
+    }
+    .task-checkbox {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+}
+
+
+/* for desktop */
+@media screen and (min-width: 1024px) {
+    .nav {
+        gap: 1rem;
+        height: 100px;
+        padding: 0rem 5rem;
+    }
+    .nav-logo {
+        height: 4rem;
+        width: 4rem;
+    }
+    .nav-title {
+        font-size: 1.5rem;
+    }
+    .main {
+        width: 100vw;
+    }
+    .main-container {
+        padding: 2rem;
+        padding-top: 140px;
+        max-width: 80rem;
+    }
+    .modal-content {
+        padding: 2rem;
+    }
+    .modal-title {
+        font-size: 2rem;
+    }
+    .modal-form {
+        gap: 1rem;
+    }
+    .modal-input, .modal-select {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    .modal-buttons {
+        gap: 1rem;
+    }
+    .modal-cancel-btn, .modal-save-btn {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .add-task-btn {
+        font-size: 1.5rem;
+    }
+    .task-card {
+        padding: 1rem;
+    }
+    .task-title {
+        font-size: 1.5rem;
+        max-height: 60px;
+        max-width: 500px;
+    }
+    .task-date {
+        font-size: 1.25rem;
+    }
+    .task-actions {
+        gap: 1rem;
+    }
+    .edit-btn, .delete-btn {
+        font-size: 1.75rem;
+    }
+    .task-checkbox {
+        height: 1.75rem;
+        width: 1.75rem;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.blue-border {
+    border-left: 20px solid #4285f4;
+}
+
+.green-border {
+    border-left: 20px solid #34a853;
+}
+
+.yellow-border {
+    border-left: 20px solid #fbbc05;
+}
+
+.grey-border {
+    border-left: 20px solid #a8a8a8;
+}
+
+.line-through {
+    text-decoration: line-through;
+    color: gray;
+}
+
